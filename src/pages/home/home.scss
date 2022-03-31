@@ -1,13 +1,49 @@
-h2,h3{
+h2,
+h3 {
   margin: 0;
 }
 
-.home {
+body {
   overflow-x: hidden;
+}
+
+.home {
+  .white-ball {
+    background: #fff;
+    border-radius: 50%;
+
+    position: absolute;
+  }
+
+  .white-ball-50 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .white-ball-100 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .white-rectangular {
+    background: #fff;
+
+    position: absolute;
+  }
+
+  .white-rectangular-25 {
+    width: 200px;
+    height: 25px;
+  }
+
+  .white-rectangular-50 {
+    width: 300px;
+    height: 50px;
+  }
 
   .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     height: 100vh;
@@ -24,7 +60,7 @@ h2,h3{
   }
 
   .container {
-    height: 4000px;
+    //height: 10000px;
 
     .content-container {
       display: flex;
@@ -35,6 +71,8 @@ h2,h3{
       height: 100vh;
 
       background: #fff;
+
+      position: relative;
 
       .phone {
         width: 40%;
@@ -47,6 +85,20 @@ h2,h3{
       .text-right {
         text-align: right;
       }
+
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+        flex-direction: column;
+
+        .text {
+          text-align: center;
+          margin: 20px 0;
+        }
+      }
+    }
+
+    .pong-container {
+      background: linear-gradient(lighblue, purple);
     }
 
     .box {
