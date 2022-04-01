@@ -163,17 +163,6 @@ const Home = () => {
       },
     });
 
-    /* gsap.from(".pong-container", {
-      scrollTrigger: {
-        trigger: ".pong-container",
-        start: "1200",
-        end: "2000",
-        scrub: true,
-        pin: ".container",
-        markers: true,
-      },
-    }); */
-
     const pongTl = gsap.timeline();
 
     pongTl

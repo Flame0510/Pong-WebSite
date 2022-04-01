@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Home from "./pages/home/Home";
+import Pong from "./pages/threejs/3DPong";
+import ThreeJs from "./pages/threejs/ThreeJs";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/pong" element={<Pong />} />
+        <Route path="/three" element={<ThreeJs />} />
       </Routes>
     </Router>
   );
