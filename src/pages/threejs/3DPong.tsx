@@ -4,6 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { GUI } from "dat.gui";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const Pong = () => {
@@ -52,6 +53,12 @@ const Pong = () => {
     container!.append(renderer.domElement);
 
     const gui = new GUI();
+
+    /* const loader = new GLTFLoader();
+
+    loader.load(require("./prestat-open-correct-gold.glb"), (glb) =>
+      scene.add(glb.scene)
+    ); */
 
     const light = new THREE.PointLight(0xffffff, 1);
     light.position.set(0, 0, -1);
@@ -250,8 +257,8 @@ const Pong = () => {
         },
         1
       ); */
-
-    tl.duration(20);
+    
+    tl.duration(5);
     tl.delay(0);
     //tl.play();
 
@@ -265,15 +272,45 @@ const Pong = () => {
       pin: true,
     });
 
-    gsap.to(camera.position, {
-      z: cameraZ - 1,
-      scrollTrigger: {
-        trigger: "canvas",
-        start: "top",
-        end: "bottom",
-        scrub: true,
-        pin: true,
-      },
+    const cameraTl = gsap.timeline();
+
+    cameraTl
+      .from(
+        camera.position,
+        {
+          z: 0,
+          duration: 1,
+        },
+        0
+      )
+      .to(
+        camera.position,
+        {
+          x: 4,
+          duration: 1,
+        },
+        1
+      )
+      .to(
+        camera.rotation,
+        {
+          y: 0.3,
+          duration: 1,
+        },
+        1
+      );
+
+    cameraTl.duration(5);
+    //cameraTl.play();
+
+    ScrollTrigger.create({
+      trigger: "canvas",
+      animation: cameraTl,
+      start: "top",
+      end: "bottom",
+      scrub: true,
+      markers: true,
+      pin: true,
     });
 
     function resizeRendererToDisplaySize(container: any, renderer: any) {

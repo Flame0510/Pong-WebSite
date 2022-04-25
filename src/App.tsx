@@ -8,6 +8,7 @@ function App() {
     <Router>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Pong</title>
       </Helmet>
 
       <Routes>
