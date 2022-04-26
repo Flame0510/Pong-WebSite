@@ -7,7 +7,8 @@ function App() {
   return (
     <Router>
       <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <link rel="icon" href={require("./assets/images/pong/logo.png")} />
         <title>Pong</title>
       </Helmet>
 

@@ -59,6 +59,7 @@ const Header = () => {
   return (
     <div className="header">
       <h1 className="title">PONG</h1>
+
       <img
         className="pong-image"
         src={require("../../assets/images/pong/pong.png")}
